@@ -1,0 +1,56 @@
+run the node.js project -- node index.js(file name)
+package.json creation -- npm init -y
+stop the server -- ctrl+c
+Restart the server -- node index.js
+without stopping and restarting the server after modification, use this command that automatically restarts -- npm i install nodemon -g
+nodemon version -- nodemon -v
+3.1.14
+Give this command to automatically run the server after modification for the file: nodemon index.js
+
+
+
+
+
+let http=require('http')
+let n=5;
+let f=1;
+for(let i=1;i<=n;i++){
+   f=f*i;
+}
+let server =http.createServer((req,res)=>{
+    res.writeHead(200)
+    res.write(`${n}! = ${f}`);
+    res.end()
+});
+server.listen(3000,`127.0.0.1`,()=>{
+    console.log(`server run on http://127.0.0.1:3000`)
+})
+
+
+
+let http=require('http')
+let server =http.createServer((req,res)=>{
+    res.writeHead(200)
+    res.write("Hello gocha from socha")
+    res.end()
+});
+server.listen(3000,`127.0.0.1`,()=>{
+    console.log(`server run on http://127.0.0.1:3000`)
+})
+
+
+
+let http=require('http')
+let x=12;
+let y=13;
+let server =http.createServer((req,res)=>{
+    res.writeHead(200)
+    res.write(`${x} + ${y} = ${x+y}`)
+    res.end()
+});
+server.listen(3000,`127.0.0.1`,()=>{
+    console.log(`server run on http://127.0.0.1:3000`)
+})
+
+
+
