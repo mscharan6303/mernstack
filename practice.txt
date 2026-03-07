@@ -274,6 +274,10 @@ console.log(qs.stringify(obj))
 //FILE SYSTEMS
 
 
+//example.txt
+
+welcome to ongole
+
 
 //1.REAGING FILES ASYNCHRONOUSLY
 
@@ -421,6 +425,27 @@ console.log('file deleted successfully');
     console.err("error deleting file: ",err)
 }
 
+
+
+
+//8. renaming a file asynchronusly
+
+let fs=require('fs');
+fs.rename('index.html','app.html',(err)=>{
+   if(err){
+    console.error('Error message:',err);
+   }
+   else{
+    console.log("File renamed successfully");
+   }
+});
+
+//renaming a file synchronusly
+
+let fs=require('fs');
+fs.renameSync('app.html','server.html',(err)=>{
+    console.log("File renamed successfully");
+});
 
 
 
