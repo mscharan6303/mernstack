@@ -362,3 +362,34 @@ fs.writeFile('example.txt','welcome to Node.js!','utf8',(err)=>{
 
 
 
+//5.appending data to a file asynchronously
+let fs=require('fs')
+fs.appendFile('example.txt','Node.js is used to design backend and front-end page','utf8',(err)=>{
+    if(err){
+        console.log("Error appending file: ",err)
+    }
+    console.log("content appened successfully")
+})
+
+//5.appending data to a file synchronously
+let fs=require('fs')
+fs.appendFileSync('output.txt','\nNode.js is used to create server pages','utf8')
+console.log('content appended successfully')
+
+
+
+
+
+//6.
+let fs=require('fs')
+let user={name:'Alice',age:25,city:'NewYork'}
+fs.writeFile('user.json',JSON.stringify(user,null,2),'utf8',(err)=>{
+    if(err){
+        console.log('erroe message:',err)
+        return
+    }
+    console.log('wrote the data sucessfully')
+})
+
+
+
