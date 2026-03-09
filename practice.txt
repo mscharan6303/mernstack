@@ -450,3 +450,102 @@ fs.renameSync('app.html','server.html',(err)=>{
 
 
 
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------
+09 march 2026
+----------------------------------------------------------------------------------
+
+express.js
+----------
+
+
+1.Create project folder
+2.Create package.json file using --> npm init-y
+3.Install express --> npm install --save express
+
+
+/Hello world program
+let express=require('express');
+let router=express.Router();
+router.get('/',(req,res)=>{
+    res.send('<h1>get route on this</h1>');
+});
+router.post('/',(req,res)=>{
+    res.send('<h1>Post route on this</h1>');
+});
+
+
+
+index.js
+---------
+let express=require('express');
+let app=express()
+let things=require('./things')
+app.use('/things',things)
+app.get('/',(req,res)=>{
+    res.send("welcome page....")
+})
+app.listen(3000,`127.0.0.1`,()=>{
+    console.log('server run on http://127.0.0.1:3000')
+})
+
+
+
+things.js
+----------
+let express=require('express')
+let router=express.Router()
+router.get('/',(req,res)=>{
+    res.send('<h1>get method things</h1>')
+})
+router.post('/',(req,res)=>{
+    res.send("<h1>post method things file</h1>")
+})
+router.put('/',(req,res)=>{
+    res.send("<h1>update method things file</h1>")
+})
+module.exports=router
+
+
+use postman extension
+for get method:
+---------------
+1.select /get
+2.http://127.0.0.1:3000/things 
+3.o/p:get method things
+
+for post method:
+---------------
+1.select /post
+2.http://127.0.0.1:3000/things 
+3.o/p:post method things file
+
+
+for put method:
+---------------
+1.select /put
+2.http://127.0.0.1:3000/things 
+3.o/p:update method things file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
