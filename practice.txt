@@ -5724,6 +5724,41 @@ app.listen(3200,'127.0.0.1',()=>{
 
 
 
+//to fetch data from specific id
+
+index.js
+---------
+let express=require('express')
+let app=express()
+let product=require('./data.js')
+app.get('/',(req,res)=>{
+    res.json(product)
+})
+app.get('/:id',(req,res)=>{
+    let id = Number(req.params.id)
+    let prod = product.find(p => p.id === id)
+    res.send(prod)
+})
+app.listen(3200,'127.0.0.1',()=>{
+    console.log('server run on http://127.0.0.1:3200')
+})
+
+
+data.js
+--------
+let products=[
+    {id:501,name:'iphone',cost:127000},
+    {id:502,name:'ipad',cost:34000},
+    {id:503,name:'iwatch',cost:20000}
+]
+module.exports=products
+
+feth the data using: 
+http://127.0.0.1:3200/501
+http://127.0.0.1:3200/502
+http://127.0.0.1:3200/503
+
+
 
 
 
