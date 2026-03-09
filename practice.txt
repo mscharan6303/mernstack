@@ -1,3 +1,3027 @@
+-------------------------------------------------------------------------------------------
+MongoDB
+-------------------------------------------------------------------------------------------
+
+Microsoft Windows [Version 10.0.19045.6093]
+
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Admin>mongod
+
+{"t":{"$date":"2026-03-03T15:29:49.092+05:30"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"thread1","msg":"Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
+
+{"t":{"$date":"2026-03-03T15:29:49.148+05:30"},"s":"I",  "c":"CONTROL",  "id":5945603, "ctx":"thread1","msg":"Multi threading initialized"}
+
+{"t":{"$date":"2026-03-03T15:29:49.148+05:30"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"thread1","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set at least one of the related parameters","attr":{"relatedParameters":["tcpFastOpenServer","tcpFastOpenClient","tcpFastOpenQueueSize"]}}
+
+{"t":{"$date":"2026-03-03T15:29:49.149+05:30"},"s":"I",  "c":"NETWORK",  "id":4915701, "ctx":"thread1","msg":"Initialized wire specification","attr":{"spec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":25},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":25},"outgoing":{"minWireVersion":6,"maxWireVersion":25},"isInternalClient":true}}}
+
+{"t":{"$date":"2026-03-03T15:29:49.151+05:30"},"s":"I",  "c":"TENANT_M", "id":7091600, "ctx":"thread1","msg":"Starting TenantMigrationAccessBlockerRegistry"}
+
+{"t":{"$date":"2026-03-03T15:29:49.151+05:30"},"s":"I",  "c":"CONTROL",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":5436,"port":27017,"dbPath":"/data/db","architecture":"64-bit","host":"L106-SYS-090"}}
+
+{"t":{"$date":"2026-03-03T15:29:49.151+05:30"},"s":"I",  "c":"CONTROL",  "id":23398,   "ctx":"initandlisten","msg":"Target operating system minimum version","attr":{"targetMinOS":"Windows 7/Windows Server 2008 R2"}}
+
+{"t":{"$date":"2026-03-03T15:29:49.151+05:30"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"8.0.19","gitVersion":"cc1adb6b0875cc3003854ac2489818e459686f0b","modules":[],"allocator":"tcmalloc-gperf","environment":{"distmod":"windows"}}}}
+
+{"t":{"$date":"2026-03-03T15:29:49.151+05:30"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"Microsoft Windows 10","version":"10.0 (build 19045)"}}}
+
+{"t":{"$date":"2026-03-03T15:29:49.152+05:30"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{}}}
+
+{"t":{"$date":"2026-03-03T15:29:49.152+05:30"},"s":"W",  "c":"NETWORK",  "id":11621101,"ctx":"initandlisten","msg":"Overriding max connections to honor capMemoryConsumptionForPreAuthBuffers settings","attr":{"limit":103731}}
+
+{"t":{"$date":"2026-03-03T15:29:49.199+05:30"},"s":"E",  "c":"CONTROL",  "id":20557,   "ctx":"initandlisten","msg":"DBException in initAndListen, terminating","attr":{"error":"NonExistentPath: Data directory \\data\\db not found. Create the missing directory or specify another path using (1) the --dbpath command line option, or (2) by adding the 'storage.dbPath' option in the configuration file."}}
+
+{"t":{"$date":"2026-03-03T15:29:49.199+05:30"},"s":"I",  "c":"REPL",     "id":4784900, "ctx":"initandlisten","msg":"Stepping down the ReplicationCoordinator for shutdown","attr":{"waitTimeMillis":15000}}
+
+{"t":{"$date":"2026-03-03T15:29:49.246+05:30"},"s":"I",  "c":"REPL",     "id":4794602, "ctx":"initandlisten","msg":"Attempting to enter quiesce mode"}
+
+{"t":{"$date":"2026-03-03T15:29:49.246+05:30"},"s":"I",  "c":"-",        "id":6371601, "ctx":"initandlisten","msg":"Shutting down the FLE Crud thread pool"}
+
+{"t":{"$date":"2026-03-03T15:29:49.249+05:30"},"s":"I",  "c":"COMMAND",  "id":4784901, "ctx":"initandlisten","msg":"Shutting down the MirrorMaestro"}
+
+{"t":{"$date":"2026-03-03T15:29:49.251+05:30"},"s":"I",  "c":"SHARDING", "id":4784902, "ctx":"initandlisten","msg":"Shutting down the WaitForMajorityService"}
+
+{"t":{"$date":"2026-03-03T15:29:49.253+05:30"},"s":"I",  "c":"NETWORK",  "id":8314100, "ctx":"initandlisten","msg":"Shutdown: Closing listener sockets"}
+
+{"t":{"$date":"2026-03-03T15:29:49.255+05:30"},"s":"I",  "c":"NETWORK",  "id":4784905, "ctx":"initandlisten","msg":"Shutting down the global connection pool"}
+
+{"t":{"$date":"2026-03-03T15:29:49.256+05:30"},"s":"I",  "c":"CONTROL",  "id":4784906, "ctx":"initandlisten","msg":"Shutting down the FlowControlTicketholder"}
+
+{"t":{"$date":"2026-03-03T15:29:49.258+05:30"},"s":"I",  "c":"-",        "id":20520,   "ctx":"initandlisten","msg":"Stopping further Flow Control ticket acquisitions."}
+
+{"t":{"$date":"2026-03-03T15:29:49.280+05:30"},"s":"I",  "c":"NETWORK",  "id":4784918, "ctx":"initandlisten","msg":"Shutting down the ReplicaSetMonitor"}
+
+{"t":{"$date":"2026-03-03T15:29:49.280+05:30"},"s":"I",  "c":"SHARDING", "id":4784921, "ctx":"initandlisten","msg":"Shutting down the MigrationUtilExecutor"}
+
+{"t":{"$date":"2026-03-03T15:29:49.299+05:30"},"s":"I",  "c":"ASIO",     "id":22582,   "ctx":"MigrationUtil-TaskExecutor","msg":"Killing all outstanding egress activity."}
+
+{"t":{"$date":"2026-03-03T15:29:49.305+05:30"},"s":"I",  "c":"NETWORK",  "id":20562,   "ctx":"initandlisten","msg":"Shutdown: Closing open transport sessions"}
+
+{"t":{"$date":"2026-03-03T15:29:49.306+05:30"},"s":"I",  "c":"NETWORK",  "id":4784923, "ctx":"initandlisten","msg":"Shutting down the ASIO transport SessionManager"}
+
+{"t":{"$date":"2026-03-03T15:29:49.307+05:30"},"s":"I",  "c":"CONTROL",  "id":4784928, "ctx":"initandlisten","msg":"Shutting down the TTL monitor"}
+
+{"t":{"$date":"2026-03-03T15:29:49.309+05:30"},"s":"I",  "c":"CONTROL",  "id":6278511, "ctx":"initandlisten","msg":"Shutting down the Change Stream Expired Pre-images Remover"}
+
+{"t":{"$date":"2026-03-03T15:29:49.310+05:30"},"s":"I",  "c":"CONTROL",  "id":4784929, "ctx":"initandlisten","msg":"Acquiring the global lock for shutdown"}
+
+{"t":{"$date":"2026-03-03T15:29:49.312+05:30"},"s":"I",  "c":"-",        "id":4784931, "ctx":"initandlisten","msg":"Dropping the scope cache for shutdown"}
+
+{"t":{"$date":"2026-03-03T15:29:49.313+05:30"},"s":"I",  "c":"-",        "id":10175800,"ctx":"initandlisten","msg":"Shutting down the standalone executor"}
+
+{"t":{"$date":"2026-03-03T15:29:49.315+05:30"},"s":"I",  "c":"CONTROL",  "id":20565,   "ctx":"initandlisten","msg":"Now exiting"}
+
+{"t":{"$date":"2026-03-03T15:29:49.322+05:30"},"s":"I",  "c":"CONTROL",  "id":8423404, "ctx":"initandlisten","msg":"mongod shutdown complete","attr":{"Summary of time elapsed":{"Statistics":{"Enter terminal shutdown":"0 ms","Step down the replication coordinator for shutdown":"47 ms","Time spent in quiesce mode":"0 ms","Shut down FLE Crud subsystem":"0 ms","Shut down MirrorMaestro":"3 ms","Shut down WaitForMajorityService":"4 ms","Shut down the global connection pool":"3 ms","Shut down the flow control ticket holder":"2 ms","Shut down the replica set monitor":"0 ms","Shut down the migration util executor":"10 ms","Shut down the transport layer":"6 ms","Shut down the TTL monitor":"1 ms","Shut down expired pre-images and documents removers":"2 ms","Shut down full-time data capture":"0 ms","Shut down standalone executor":"1 ms","Shut down online certificate status protocol manager":"0 ms","shutdownTask total elapsed time":"116 ms"}}}}
+
+{"t":{"$date":"2026-03-03T15:29:49.323+05:30"},"s":"I",  "c":"CONTROL",  "id":23138,   "ctx":"initandlisten","msg":"Shutting down","attr":{"exitCode":100}}
+
+C:\Users\Admin>mongosh
+
+------
+
+   The server generated these startup warnings when bootingnnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2
+
+   2026-03-03T15:23:52.281+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted.0.19
+
+------Mongosh:          2.7.0
+
+test> db.version()
+
+8.0.19
+
+test> show dbs
+
+admin   40.00 KiB
+
+config  84.00 KiB
+
+local   72.00 KiB
+
+test> db.adminCommand("listDatabases")
+
+{
+
+  databases: [
+
+    { name: 'admin', sizeOnDisk: Long('40960'), empty: false },
+
+    { name: 'config', sizeOnDisk: Long('86016'), empty: false },
+
+    { name: 'local', sizeOnDisk: Long('73728'), empty: false }
+
+  ],
+
+  totalSize: Long('200704'),
+
+  totalSizeMb: Long('0'),
+
+  ok: 1
+
+}
+
+test> db.getMongo().getDBNames()
+
+[ 'admin', 'config', 'local' ]
+
+test> use QIS
+
+switched to db QIS
+
+QIS> db.createCollection('AIML')
+
+{ ok: 1 }
+
+QIS> show collections
+
+AIML
+
+QIS> show tables
+
+AIML
+
+QIS> db.getCollectionNames()
+
+[ 'AIML' ]
+
+QIS>
+
+QIS> db.createCollection('CSE',{capped:true})
+
+MongoServerError[InvalidOptions]: the 'size' field is required when 'capped' is true
+
+QIS> show tables
+
+AIML
+
+QIS> db.createCollection('CSE',{capped:true,size:325410,max:5})
+
+{ ok: 1 }
+
+QIS> show tables
+
+AIML
+
+CSE
+
+QIS> db.getCollectionNames()
+
+[ 'AIML' ]
+
+QIS> doc ={name:"raj",age:34,address:"hyd"}
+
+{ name: 'raj', age: 34, address: 'hyd' }ize' field is required when 'capped' is true
+
+QIS> db.CSE.insert(doc)
+
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+
+{
+
+  acknowledged: true,
+
+  insertedIds: { '0': ObjectId('69a6b5de91017be9e67c2907') }
+
+QIS> db.CSE.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6b5de91017be9e67c2907'),
+
+    name: 'raj',
+
+    age: 34,
+
+    address: 'hyd'
+
+  }
+
+]
+
+QIS> db.CSE.insert({name:"raki",age:24})
+
+{
+
+  acknowledged: true,
+
+  insertedIds: { '0': ObjectId('69a6b69e91017be9e67c2908') }
+
+}
+
+QIS> db.CSE.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6b5de91017be9e67c2907'),
+
+    name: 'raj',
+
+    age: 34,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a6b69e91017be9e67c2908'), name: 'raki', age: 24 }
+
+]
+
+QIS>  db.CSE.insert({name:"rakesh",age:45})
+
+{
+
+  acknowledged: true,
+
+  insertedIds: { '0': ObjectId('69a6b72c91017be9e67c2909') }
+
+}
+
+QIS> db.CSE.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6b5de91017be9e67c2907'),
+
+    name: 'rakesh',
+
+    age: 34,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a6b69e91017be9e67c2908'), name: 'raki', age: 24 },
+
+  { _id: ObjectId('69a6b72c91017be9e67c2909'), name: 'rakesh', age: 45 }
+
+]
+
+QIS> db.CSE.drop()
+
+true
+
+QIS> show collections
+
+AIML
+
+QIS>db.dropDatabase()   
+
+{ ok: 1, dropped: 'QIS' }
+
+QIS> db
+
+QIS
+
+QIS> show collections
+
+QISk: 1, dropped: 'QIS' }
+
+QIS>db.cse.insertOne({name:"Raj",age:43})
+
+{
+
+  acknowledged: true,
+
+  insertedId: ObjectId('69a6bc0a91017be9e67c290c')
+
+}
+
+QIS> show collections
+
+cse
+
+QIS> db.cse.find()
+
+[ { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 } ]
+
+
+
+
+
+                            04/03/26
+
+
+
+QIS> db.cse.insertMany([{name:"Raki",age:24},{name:"Raghu",age:21},{name:"Ravi",age:27}])
+
+{
+
+  acknowledged: true,
+
+  insertedIds: {
+
+    '0': ObjectId('69a7c62d7f756163e97c2907'),
+
+    '1': ObjectId('69a7c62d7f756163e97c2908'),
+
+    '2': ObjectId('69a7c62d7f756163e97c2909')
+
+  }
+
+}
+
+QIS> db.cse.bulkWrite([{insertOne:{"document":{name:"Ravali",age:25}}}])
+
+{
+
+  acknowledged: true,
+
+  insertedCount: 1,
+
+  insertedIds: { '0': ObjectId('69a7c7727f756163e97c290a') },
+
+  matchedCount: 0,
+
+  modifiedCount: 0,
+
+  deletedCount: 0,
+
+  upsertedCount: 0,
+
+  upsertedIds: {}
+
+}
+
+QIS> db.cse.bulkWrite([{insertOne:{"document":{name:"hari",age:26}}},{insertOne:{"document":{name:"harsha",age:28}}}])
+
+{
+
+  acknowledged: true,
+
+  insertedCount: 2,
+
+  insertedIds: {
+
+    '0': ObjectId('69a7c87431999177ee7c290b'),
+
+    '1': ObjectId('69a7c87431999177ee7c290c')
+
+  },
+
+  matchedCount: 0,
+
+  modifiedCount: 0,
+
+  deletedCount: 0,
+
+  upsertedCount: 0,
+
+  upsertedIds: {}
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi', age: 27 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha', age: 28 }
+
+]
+
+QIS> db.cse.count()
+
+DeprecationWarning: Collection.count() is deprecated. Use countDocuments or estimatedDocumentCount.// It will not available in future
+
+7
+
+Another way to count the documents
+
+QIS> db.cse.countDocuments({})
+
+7
+
+QIS> db.cse.findOne()
+
+{ _id: ObjectId('69a6bcc663cf682b1e7c290a'), name: 'Raj', age: 43 }
+
+
+
+QIS> db.cse.find()
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi', age: 27 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha', age: 28 }
+
+]
+
+QIS> db.cse.find({name:"Raghu"})
+
+[
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 }
+
+]
+
+QIS> db.cse.find({age:{$eq:26}})
+
+[
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 }
+
+]
+
+QIS> db.cse.find({age:{$gt:26}})
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi', age: 27 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha', age: 28 }
+
+]
+
+QIS> db.cse.find({age:{$lt:26}}) //lt:less than
+
+[
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 }
+
+]
+
+QIS> db.cse.find({age:{$gte:26}}) //gte:greater than or equal
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi', age: 27 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha', age: 28 }
+
+]
+
+QIS> db.cse.find({age:{$lte:26}}) //lte:less than or equal
+
+[
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 }
+
+]
+
+QIS> db.cse.find({age:{$ne:26}}) //not equal to
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi', age: 27 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha', age: 28 }
+
+]
+
+QIS> db.cse.find({age:{$not:{$gt:26}}}) //less than or equal to operation in other method
+
+[
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 }
+
+]
+
+QIS> db.cse.find({$nor:[{name:"Raki"},{age:{$eq:24}}]})
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi', age: 27 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha', age: 28 }
+
+]
+
+QIS> db.cse.find({$or:[{name:"Raki"},{age:{$eq:26}}]})
+
+[
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 }
+
+]
+
+QIS> db.cse.find({$and:[{name:"hari"},{age:{$eq:26}}]})
+
+[
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 }
+
+]
+
+QIS> db.cse.find({$and:[{$or:[{name:"Raki"},{age:{$eq:26}}]},{name:"hari"}]})
+
+[
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 }
+
+]
+
+QIS> db.cse.find({age:{$exists:true}})
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi', age: 27 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha', age: 28 }
+
+]
+
+QIS> db.cse.find({name:{$exists:true,$eq:"Raki"}})
+
+[
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 }
+
+]
+
+QIS> db.cse.find({name:{$type:"string"}})
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi', age: 27 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha', age: 28 }
+
+]
+
+QIS> db.cse.insertMany([{name:501,age:23},{name:502,age:25}])
+
+{
+
+  acknowledged: true,
+
+  insertedIds: {
+
+    '0': ObjectId('69a7d8427f756163e97c290e'),
+
+    '1': ObjectId('69a7d8427f756163e97c290f')
+
+  }
+
+}
+
+QIS> db.cse.find({name:{$type:"number"}})
+
+[
+
+  { _id: ObjectId('69a7d8427f756163e97c290e'), name: 501, age: 23 },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 502, age: 25 }
+
+]
+
+
+
+QIS> db.cse.find({name:{$type:["number","string"]}})
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi', age: 27 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha', age: 28 },
+
+  { _id: ObjectId('69a7d8427f756163e97c290e'), name: 501, age: 23 },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 502, age: 25 }
+
+]
+QIS> db.cse.find({},{name:1})
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj' },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki' },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu' },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi' },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali' },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari' },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha' },
+
+  { _id: ObjectId('69a7d8427f756163e97c290e'), name: 501 },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 502 }
+
+]
+
+QIS> db.cse.find({},{name:1,_id:0})
+
+[
+
+  { name: 'Raj' },
+
+  { name: 'Raki' },
+
+  { name: 'Raghu' },
+
+  { name: 'Ravi' },
+
+  { name: 'Ravali' },
+
+  { name: 'hari' },
+
+  { name: 'harsha' },
+
+  { name: 501 },
+
+  { name: 502 }
+
+]
+
+QIS> db.aiml.insertMany([{rollno:501,marks:[25,35,46]},{rollno:502,marks:[35,26,45]},{rollno:503,marks:[40,35,60]},{rollno:504,marks:[26,45,85]}])
+
+{
+
+  acknowledged: true,
+
+  insertedIds: {
+
+    '0': ObjectId('69a80408c6188ccb557c2907'),
+
+    '1': ObjectId('69a80408c6188ccb557c2908'),
+
+    '2': ObjectId('69a80408c6188ccb557c2909'),
+
+    '3': ObjectId('69a80408c6188ccb557c290a')
+
+  }
+
+}
+
+QIS> db.aiml.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2907'),
+
+    rollno: 501,
+
+    marks: [ 25, 35, 46 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2908'),
+
+    rollno: 502,
+
+    marks: [ 35, 26, 45 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2909'),
+
+    rollno: 503,
+
+    marks: [ 40, 35, 60 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c290a'),
+
+    rollno: 504,
+
+    marks: [ 26, 45, 85 ]
+
+  }
+
+]
+
+QIS> db.aiml.find({marks:{$in:[26,85]}})
+
+[
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2908'),
+
+    rollno: 502,
+
+    marks: [ 35, 26, 45 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c290a'),
+
+    rollno: 504,
+
+    marks: [ 26, 45, 85 ]
+
+  }
+
+]
+
+QIS> db.aiml.find({marks:{$nin:[26,85]}})
+
+[
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2907'),
+
+    rollno: 501,
+
+    marks: [ 25, 35, 46 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2909'),
+
+    rollno: 503,
+
+    marks: [ 40, 35, 60 ]
+
+  }
+
+]
+
+QIS> db.aiml.insertOne({name: "Ravi",marks: [32, 45]})
+
+{
+
+  acknowledged: true,
+
+  insertedId: ObjectId('69a80908c6188ccb557c290b')
+
+}
+
+QIS> db.aiml.find({marks:{$size:2}})
+
+[
+
+  {
+
+    _id: ObjectId('69a80908c6188ccb557c290b'),
+
+    name: 'Ravi',
+
+    marks: [ 32, 45 ]
+
+  }
+
+]
+
+QIS>db.aiml.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a80494e440d8ab547c2907'),
+
+    rollno: 501,
+
+    marks: [ 25, 35, 46 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80494e440d8ab547c2908'),
+
+    rollno: 502,
+
+    marks: [ 35, 26, 45 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80494e440d8ab547c2909'),
+
+    rollno: 503,
+
+    marks: [ 40, 35, 60 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80494e440d8ab547c290a'),
+
+    rollno: 504,
+
+    marks: [ 26, 45, 85 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a8093fe440d8ab547c290b'),
+
+    name: 'Ravi',
+
+    marks: [ 32, 45 ]
+
+  }
+
+]
+
+
+
+QIS> db.aiml.find({marks:{$all:[45,85]}})
+
+[
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c290a'),
+
+    rollno: 504,
+
+    marks: [ 26, 45, 85 ]
+
+  }
+
+]
+
+QIS> db.aiml.find({marks:{$elemMatch:{$gte:85}}})
+
+[
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c290a'),
+
+    rollno: 504,
+
+    marks: [ 26, 45, 85 ]
+
+  }
+
+]
+
+QIS> db.aiml.find({ marks: { $elemMatch: { $gte: 45 } } })
+
+[
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2907'),
+
+    rollno: 501,
+
+    marks: [ 25, 35, 46 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2908'),
+
+    rollno: 502,
+
+    marks: [ 35, 26, 45 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2909'),
+
+    rollno: 503,
+
+    marks: [ 40, 35, 60 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c290a'),
+
+    rollno: 504,
+
+    marks: [ 26, 45, 85 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80908c6188ccb557c290b'),
+
+    name: 'Ravi',
+
+    marks: [ 32, 45 ]
+
+  }
+
+]
+
+
+
+update document methods
+
+
+
+QIS> db.cse.find()
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi', age: 27 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha', age: 28 },
+
+  { _id: ObjectId('69a7d8427f756163e97c290e'), name: 501, age: 23 },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 502, age: 25 }
+
+]
+
+QIS> db.cse.updateOne({name:501},{$set:{name:"Ramana:"}})
+
+{
+
+  acknowledged: true,
+
+  insertedId: null,
+
+  matchedCount: 1,
+
+  modifiedCount: 1,
+
+  upsertedCount: 0
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  { _id: ObjectId('69a6bc0a91017be9e67c290c'), name: 'Raj', age: 43 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2907'), name: 'Raki', age: 24 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2908'), name: 'Raghu', age: 21 },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Ravi', age: 27 },
+
+  { _id: ObjectId('69a7c7727f756163e97c290a'), name: 'Ravali', age: 25 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290c'), name: 'hari', age: 26 },
+
+  { _id: ObjectId('69a7c87e7f756163e97c290d'), name: 'harsha', age: 28 },
+
+  { _id: ObjectId('69a7d8427f756163e97c290e'), name: 'Ramana', age: 23 },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 502, age: 25 }
+
+]
+
+========================================================================================
+
+QIS> db.cse.updateMany({address:{$exists:false}},{$set:{address:"hyd"}})
+
+{
+
+  acknowledged: true,
+
+  insertedId: null,
+
+  matchedCount: 9,
+
+  modifiedCount: 9,
+
+  upsertedCount: 0
+
+}
+
+QIS> db.cse.countDocuments()
+
+9
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+QIS>
+
+    name: 'Raj',
+
+    age: 43,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',
+
+    age: 24,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu',
+
+    age: 21,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2909'),
+
+    name: 'Ravi',
+
+    age: 27,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 25,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 26,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 28,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'Ramana:',
+
+    age: 23,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290f'),
+
+    name: 502,
+
+    age: 25,
+
+    address: 'hyd'
+
+  }
+
+]
+
+QIS> db.cse.update({name:502},{$set:{name:"Ramu",address:"ogl"}})
+
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+
+{
+
+  acknowledged: true,
+
+  insertedId: null,
+
+  matchedCount: 1,
+
+  modifiedCount: 1,
+
+  upsertedCount: 0
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+    name: 'Raj',
+
+    age: 43,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',
+
+    age: 24,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu',
+
+    age: 21,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2909'),
+
+    name: 'Ravi',
+
+    age: 27,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 25,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 26,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 28,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'Ramana:',
+
+    age: 23,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290f'),
+
+    name: 'Ramu',
+
+    age: 25,
+
+    address: 'ogl'//updated
+
+  }
+
+]
+
+QIS> db.cse.bulkWrite([{updateOne:{filter: { name: "Ramu" },update: { $set: { age: 41 }}}}])
+
+{
+
+  acknowledged: true,
+
+  insertedCount: 0,
+
+  insertedIds: {},
+
+  matchedCount: 1,
+
+  modifiedCount: 1,
+
+  deletedCount: 0,
+
+  upsertedCount: 0,
+
+  upsertedIds: {}
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+    name: 'Raj',
+
+    age: 43,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',
+
+    age: 24,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu',
+
+    age: 21,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2909'),
+
+    name: 'Ravi',
+
+    age: 27,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 25,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 26,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 28,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'Ramana:',
+
+    age: 23,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290f'),
+
+    name: 'Ramu',
+
+    age: 41,
+
+    address: 'ogl'
+
+  }
+
+]
+
+QIS> db.cse.replaceOne({name:"Ramu"},{name:"Rajini",age:49})
+
+{
+
+  acknowledged: true,
+
+  insertedId: null,
+
+  matchedCount: 1,
+
+  modifiedCount: 1,
+
+  upsertedCount: 0
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+    name: 'Raj',
+
+    age: 43,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',
+
+    age: 24,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu',
+
+    age: 21,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2909'),
+
+    name: 'Ravi',
+
+    age: 27,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 25,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 26,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 28,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'Ramana:',
+
+    age: 23,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 'Rajani', age: 49 }
+
+
+
+QIS> db.cse.findOneAndUpdate({name:"Ramana"},{$set:{name:"TVS Ramana"}})
+
+{
+
+  _id: ObjectId('69a7d8427f756163e97c290e'),
+
+  name: 'Ramana:',
+
+  age: 23,
+
+  address: 'hyd'
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+    name: 'Raj',
+
+    age: 43,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',
+
+    age: 24,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu',
+
+    age: 21,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2909'),
+
+    name: 'Ravi',
+
+    age: 27,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 25,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 26,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 28,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'TVS Ramana',
+
+    age: 23,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 'Rajani', age: 49 }
+
+]
+
+
+
+QIS> db.cse.findOneAndReplace({name:"Ravi"},{name:"Raju",age:22})
+
+{
+
+  _id: ObjectId('69a7c62d7f756163e97c2909'),
+
+  name: 'Ravi',
+
+  age: 27,
+
+  address: 'hyd'
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+    name: 'Raj',
+
+    age: 43,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',
+
+    age: 24,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu',
+
+    age: 21,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Raju', age: 22 },
+
+  {
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 25,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 26,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 28,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'TVS Ramana',
+
+    age: 23,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 'Rajani', age: 49 }
+
+]
+
+
+
+QIS> db.cse.findAndModify({ query: { name: "Raj" },update: { $set: { age: 14 } }})
+
+{
+
+  _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+  name: 'Raj',
+
+  age: 43,
+
+  address: 'hyd'
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+    name: 'Raj',
+
+    age: 14,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',
+
+    age: 24,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu',
+
+    age: 21,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Raju', age: 22 },
+
+  {
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 25,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 26,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 28,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'TVS Ramana',
+
+    age: 23,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 'Rajani', age: 49 }
+
+]
+
+QIS> db.cse.updateMany({},{$inc:{age:2}})
+
+{
+
+  acknowledged: true,
+
+  insertedId: null,
+
+  matchedCount: 9,
+
+  modifiedCount: 9,
+
+  upsertedCount: 0
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+    name: 'Raj',
+
+    age: 16,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',
+
+    age: 26,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu',
+
+    age: 23,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Raju', age: 24 },
+
+  {
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 27,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 28,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 30,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'TVS Ramana',
+
+    age: 25,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 'Rajani', age: 51 }
+
+]
+
+
+
+
+
+QIS> db.cse.update({name:"harsha"},{$mul:{age:2}})
+
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+
+{
+
+  acknowledged: true,
+
+  insertedId: null,
+
+  matchedCount: 1,
+
+  modifiedCount: 1,
+
+  upsertedCount: 0
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+    name: 'Raj',
+
+    age: 16,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',
+
+    age: 26,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu',
+
+    age: 23,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Raju', age: 24 },
+
+  {
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 27,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 28,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 60,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'TVS Ramana',
+
+    age: 25,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 'Rajani', age: 51 }
+
+]
+
+QIS> db.cse.update({},{$rename:{address:'addr'}})
+
+{
+
+  acknowledged: true,
+
+  insertedId: null,
+
+  matchedCount: 1,
+
+  modifiedCount: 1,
+
+  upsertedCount: 0
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+    name: 'Raj',
+
+    age: 16,
+
+    addr: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',
+
+    age: 26,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu',
+
+    age: 23,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Raju', age: 24 },
+
+  {
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 27,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 28,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 60,
+
+    address: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'TVS Ramana',
+
+    age: 25,
+
+    address: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 'Rajani', age: 51 }
+
+]
+
+
+
+
+
+
+
+QIS> db.cse.updateMany({},{$rename:{address:'addr'}})
+
+{   age: 23,
+
+  acknowledged: true,
+
+  insertedId: null,
+
+  matchedCount: 9,'69a7c62d7f756163e97c2909'), name: 'Raju', age: 24 },
+
+  modifiedCount: 6,
+
+  upsertedCount: 0'69a7c7727f756163e97c290a'),
+
+}   name: 'Ravali',
+
+QIS> db.cse.find()
+
+[   address: 'hyd'
+
+  {,
+
+    _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+    name: 'Raj',d('69a7c87e7f756163e97c290c'),
+
+    age: 16,ari',
+
+    addr: 'hyd'
+
+  },address: 'hyd'
+
+  {,
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',('69a7c87e7f756163e97c290d'),
+
+    age: 26,arsha',
+
+    addr: 'hyd'
+
+  },address: 'hyd'
+
+  {,
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu','69a7d8427f756163e97c290e'),
+
+    age: 23,VS Ramana',
+
+    addr: 'hyd'
+
+  },address: 'hyd'
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Raju', age: 24 },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 'Rajani', age: 51 }
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 27,
+
+    addr: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 28,
+
+    addr: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 60,
+
+    addr: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'TVS Ramana',
+
+    age: 25,
+
+    addr: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7d8427f756163e97c290f'), name: 'Rajani', age: 51 }
+
+]
+
+
+
+
+
+QIS> db.cse.countDocuments()
+
+9
+
+QIS> db.cse.deleteOne({name:"Rajani"})
+
+{ acknowledged: true, deletedCount: 1 }
+
+QIS> db.cse.countDocuments()
+
+8
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a6bc0a91017be9e67c290c'),
+
+    name: 'Raj',
+
+    age: 16,
+
+    addr: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2907'),
+
+    name: 'Raki',
+
+    age: 26,
+
+    addr: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c62d7f756163e97c2908'),
+
+    name: 'Raghu',
+
+    age: 23,
+
+    addr: 'hyd'
+
+  },
+
+  { _id: ObjectId('69a7c62d7f756163e97c2909'), name: 'Raju', age: 24 },
+
+  {
+
+    _id: ObjectId('69a7c7727f756163e97c290a'),
+
+    name: 'Ravali',
+
+    age: 27,
+
+    addr: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290c'),
+
+    name: 'hari',
+
+    age: 28,
+
+    addr: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7c87e7f756163e97c290d'),
+
+    name: 'harsha',
+
+    age: 60,
+
+    addr: 'hyd'
+
+  },
+
+  {
+
+    _id: ObjectId('69a7d8427f756163e97c290e'),
+
+    name: 'TVS Ramana',
+
+    age: 25,
+
+    addr: 'hyd'
+
+  }
+
+]
+
+
+
+
+
+
+
+                           05-03-2026
+
+
+
+QIS> db.aiml.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2907'),
+
+    rollno: 501,
+
+    marks: [ 25, 35, 46 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2908'),
+
+    rollno: 502,
+
+    marks: [ 35, 26, 45 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2909'),
+
+    rollno: 503,
+
+    marks: [ 40, 35, 60 ]
+
+  },
+
+  {
+
+QIS>
+
+    rollno: 504,
+
+    marks: [ 26, 45, 85 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80908c6188ccb557c290b'),
+
+    name: 'Ravi',
+
+    marks: [ 32, 45 ]
+
+  }
+
+]
+
+QIS> db.aiml.deleteOne({name:"Ravi"})
+
+{ acknowledged: true, deletedCount: 1 }
+
+QIS> db.aiml.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2907'),
+
+    rollno: 501,
+
+    marks: [ 25, 35, 46 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2908'),
+
+    rollno: 502,
+
+    marks: [ 35, 26, 45 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c2909'),
+
+    rollno: 503,
+
+    marks: [ 40, 35, 60 ]
+
+  },
+
+  {
+
+    _id: ObjectId('69a80408c6188ccb557c290a'),
+
+    rollno: 504,
+
+    marks: [ 26, 45, 85 ]
+
+  }
+
+]
+
+QIS> db.cse.find({},{_id:0})
+
+[
+
+  { name: 'Raj', age: 16, addr: 'hyd' },
+
+  { name: 'Raki', age: 26, addr: 'hyd' },
+
+  { name: 'Raghu', age: 23, addr: 'hyd' },
+
+  { name: 'Raju', age: 24 },
+
+  { name: 'Ravali', age: 27, addr: 'hyd' },
+
+  { name: 'hari', age: 28, addr: 'hyd' },
+
+  { name: 'harsha', age: 60, addr: 'hyd' },
+
+  { name: 'TVS Ramana', age: 25, addr: 'hyd' }
+
+]
+
+QIS> db.cse.deleteMany({age:{$lt:25}})
+
+{ acknowledged: true, deletedCount: 3 }
+
+QIS> db.cse.find({},{_id:0})
+
+[
+
+  { name: 'Raki', age: 26, addr: 'hyd' },
+
+  { name: 'Ravali', age: 27, addr: 'hyd' },
+
+  { name: 'hari', age: 28, addr: 'hyd' },
+
+  { name: 'harsha', age: 60, addr: 'hyd' },
+
+  { name: 'TVS Ramana', age: 25, addr: 'hyd' }
+
+]
+
+QIS> db.cse.remove({age:{$gt:27}},1)
+
+DeprecationWarning: Collection.remove() is deprecated. Use deleteOne, deleteMany, findOneAndDelete, or bulkWrite.
+
+{ acknowledged: true, deletedCount: 2 }
+
+QIS> db.cse.find({},{_id:0})
+
+[
+
+  { name: 'Raki', age: 26, addr: 'hyd' },
+
+  { name: 'Ravali', age: 27, addr: 'hyd' },
+
+  { name: 'TVS Ramana', age: 25, addr: 'hyd' }
+
+]
+
+
+
+QIS> db.cse.remove({})
+
+{ acknowledged: true, deletedCount: 3 }
+
+QIS> db.cse.find()
+
+
+
+
+
+QIS> db.cse.insertOne({name:"Ravi",age:56,address:24})
+
+{
+
+  acknowledged: true,
+
+  insertedId: ObjectId('69a8ffcc093692b5917c2907')
+
+}
+
+QIS> db.cse.find()
+
+[
+
+  {
+
+    _id: ObjectId('69a8ffcc093692b5917c2907'),
+
+    name: 'Ravi',
+
+    age: 56,
+
+    address: 24
+
+  }
+
+]
+
+QIS> db.cse.updateOne({name:"Ravi"},{$unset:{address:''}})
+
+{
+
+  acknowledged: true,
+
+  insertedId: null,
+
+  matchedCount: 1,
+
+  modifiedCount: 1,
+
+  upsertedCount: 0
+
+}
+
+QIS> db.cse.find({},{_id:0})
+
+[ { name: 'Ravi', age: 56 } ]//address removed
+
+
+
+
+
+QIS> db.aiml.find({},{_id:0})
+
+[
+
+  { rollno: 501, marks: [ 25, 35, 46 ] },
+
+  { rollno: 502, marks: [ 35, 26, 45 ] },
+
+  { rollno: 503, marks: [ 40, 35, 60 ] },
+
+  { rollno: 504, marks: [ 26, 45, 85 ] }
+
+]
+
+QIS> db.aiml.find({},{_id:0}).limit(2)//limit method
+
+[
+
+  { rollno: 501, marks: [ 25, 35, 46 ] },
+
+  { rollno: 502, marks: [ 35, 26, 45 ] }
+
+]
+
+
+
+//skip Method
+
+QIS> db.aiml.find({},{_id:0})
+
+[
+
+  { rollno: 501, marks: [ 25, 35, 46 ] },
+
+  { rollno: 502, marks: [ 35, 26, 45 ] },
+
+  { rollno: 503, marks: [ 40, 35, 60 ] },
+
+  { rollno: 504, marks: [ 26, 45, 85 ] }
+
+]
+
+QIS> db.aiml.find({},{_id:0}).skip(1)
+
+[
+
+  { rollno: 502, marks: [ 35, 26, 45 ] },   //501 is skipped
+
+  { rollno: 503, marks: [ 40, 35, 60 ] },
+
+  { rollno: 504, marks: [ 26, 45, 85 ] }
+
+]
+
+QIS> db.aiml.find({},{_id:0}).limit(2).skip(1)
+
+[
+
+  { rollno: 502, marks: [ 35, 26, 45 ] },     
+
+  { rollno: 503, marks: [ 40, 35, 60 ] }
+
+]
+
+
+
+
+
+//sorting method
+
+QIS> db.cse.find()
+
+[
+
+  { _id: ObjectId('69a8ffcc093692b5917c2907'), name: 'Ravi', age: 56 } //having only one document
+
+]
+
+//creating many documents
+
+QIS> db.cse.insertMany([{name:"sai",age:21},{name:"teshu",age:24},{name:"mahi",age:26},{name:"hari",age:25}])
+
+{
+
+  acknowledged: true,
+
+  insertedIds: {
+
+    '0': ObjectId('69a90525093692b5917c2908'),
+
+    '1': ObjectId('69a90525093692b5917c2909'),
+
+    '2': ObjectId('69a90525093692b5917c290a'),
+
+    '3': ObjectId('69a90525093692b5917c290b')
+
+  }
+
+}
+
+QIS> db.cse.find({},{_id:0})
+
+[
+
+  { name: 'Ravi', age: 56 },
+
+  { name: 'sai', age: 21 },
+
+  { name: 'teshu', age: 24 },
+
+  { name: 'mahi', age: 26 },
+
+  { name: 'hari', age: 25 }
+
+]
+
+//sorting method
+
+QIS> db.cse.find({},{_id:0}).sort({name:1})
+
+[
+
+  { name: 'Ravi', age: 56 },   //sorted in alphabetical order.first uppercase and next lowercase
+
+  { name: 'hari', age: 25 },
+
+  { name: 'mahi', age: 26 },
+
+  { name: 'sai', age: 21 },
+
+  { name: 'teshu', age: 24 }
+
+]
+
+QIS> db.cse.find({},{_id:0}).sort({name:-1})
+
+[
+
+  { name: 'teshu', age: 24 },
+
+  { name: 'sai', age: 21 },
+
+  { name: 'mahi', age: 26 },
+
+  { name: 'hari', age: 25 },
+
+  { name: 'Ravi', age: 56 }
+
+]
+
+
+
+
+
+//indexing
+
+//createIndexing
+
+QIS> db.cse.createIndex({name:1})
+
+name_1
+
+//finding indexes
+
+QIS> db.cse.getIndexes()
+
+[
+
+  { v: 2, key: { id: 1 }, name: 'id_' },
+
+  { v: 2, key: { name: 1 }, name: 'name_1' }
+
+]
+
+//drop Indexes
+
+QIS> db.cse.dropIndexes()
+
+{
+
+  nIndexesWas: 2,
+
+  msg: 'non-_id indexes dropped for collection',
+
+  ok: 1
+
+}
+
+QIS> db.cse.getIndexes()
+
+[ { v: 2, key: { id: 1 }, name: 'id_' } ]
+
+
+
+QIS> db.cse.createIndex({name:1})
+
+name_1
+
+QIS> db.cse.createIndex({age:-1})
+
+age_-1
+
+QIS> db.cse.getIndexes()
+
+[
+
+  { v: 2, key: { id: 1 }, name: 'id_' },
+
+  { v: 2, key: { name: 1 }, name: 'name_1' },
+
+  { v: 2, key: { age: -1 }, name: 'age_-1' }
+
+]
+
+QIS> db.cse.dropIndexes({name:1})
+
+{ nIndexesWas: 3, ok: 1 }
+
+QIS> db.cse.getIndexes()
+
+[
+
+  { v: 2, key: { id: 1 }, name: 'id_' },
+
+  { v: 2, key: { age: -1 }, name: 'age_-1' }
+
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+Nodejs
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 run the node.js project -- node index.js(file name)
 package.json creation -- npm init -y
 stop the server -- ctrl+c
