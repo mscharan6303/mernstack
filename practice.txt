@@ -5697,6 +5697,36 @@ for put method:
 
 
 
+data.js
+--------
+let products=[
+    {id:501,name:'iphone',cost:12700},
+    {id:502,name:'ipad',cost:34000},
+    {id:503,name:'iwatch',cost:134000},
+]
+module.exports=products
+
+
+index.js
+---------
+let express=require('express')
+let app=express()
+let product=require('./data.js')
+app.get('/',(req,res)=>{
+    res.json(product)
+})
+app.listen(3200,'127.0.0.1',()=>{
+    console.log('server is listening on http://127.0.0.1:3200')
+})
+
+
+
+
+
+
+
+
+
 
 
 
