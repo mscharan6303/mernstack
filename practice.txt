@@ -5819,3 +5819,88 @@ h1{
 
 
 
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+10 march 2026
+------------------------------------------------------------------------------------------------------------------------------------
+FOLDER: REST API
+
+
+npm init -y
+npm i express mongoose
+
+sending a data from an html form -> Express server -> Mongodb database using Expressjs and mongoose with mongodb
+
+index.js
+---------
+let express=require('express')
+let app=express()
+let mongoose=require('mongoose')
+
+mongoose.connect('mongodb://127.0.0.1:27017/',{dbName:'stdDB'})
+.then(()=>console.log('mongoDB connected....'))
+.catch((err)=>console.log('error message',err))
+let uschema=mongoose.Schema({
+    user:String
+},{
+    versionKey:false
+})
+
+let User=mongoose.model('users',uschema)
+app.use(express.urlencoded({extended:true}))
+app.get('/',(req,res)=>{
+    res.sendFile(__dirname+'/index.html')
+})
+app.post('/submit',async(req,res) =>{
+    let user=req.body
+    await User.insertOne(user)
+    res.json(user)
+})
+app.listen(4000,'127.0.0.1',()=>{
+    console.log('server run on http://127.0.0.1:4000')
+})
+
+
+index.html
+-----------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sample Form</h1>
+    <form action="/submit" method="post">
+        <input type="text" name="user" placeholder="username">
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
