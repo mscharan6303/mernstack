@@ -6245,6 +6245,329 @@ a{
 
 
 
+index.js
+---------
+let express=require('express')
+let app=express()
+
+app.use(express.static('public'))
+
+let mongoose=require('mongoose')
+
+mongoose.connect('mongodb://127.0.0.1:27017/',{dbName:'CT'}).then(()=>{
+    console.log('mongodb connected')
+}).catch((err)=>{
+    console.log('error message',err)
+})
+app.use(express.urlencoded({extended:true}))
+
+let eSchema=new mongoose.Schema({
+    user:String,
+    pwd:String,
+    cpwd:String
+},{versionKey:false})
+
+let Emp=mongoose.model('emp',eSchema,'emp')
+
+app.get('/',(req,res)=>{
+    res.sendFile(__dirname+'/index.html')
+})
+app.get('/register.html',(req,res)=>{
+    res.sendFile(__dirname+'/register.html')
+})
+app.post('/register',async(req,res)=>{
+    let u=req.body
+    let {user,pwd,cpwd}=u
+    if(pwd.length<8){
+        res.send('password length must be 8 characters..')
+    }
+    else if(!/[A-Z]/.test(pwd)){
+        res.send("at least one upper case letter...")
+    }
+    else if(!/[a-z]/.test(pwd)){
+        res.send("at least one lower case letter...")
+    }
+    else if(!/[0-9]/.test(pwd)){
+        res.send("at leat one number...")
+    }
+    else if(!/[.,!#$@^&*:;']/.test(pwd)){
+        res.send("at least oone special character...")
+    }
+    else{
+        if(pwd===cpwd){
+             await Emp.insertOne(u)
+            res.redirect('/login.html')
+        }
+        else{
+            res.send("password and confirm password are not equal...")
+        }
+    }
+
+})
+
+app.get('/login',async(req,res)=>{
+    let user=req.query.user
+    let pwd=req.query.pwd
+    let data=await Emp.findOne({user:user,pwd:pwd})
+    if(data){
+        res.redirect('/mainpage.html')
+    }
+    else{
+        res.redirect('/login.html')
+    }
+})
+
+app.listen(3000,'127.0.0.1',()=>{
+    console.log('server run on http://127.0.0.1:3000')
+})
+
+
+
+
+index.html
+-----------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="demo">
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+    </div>
+
+</body>
+</html>
+
+
+
+register.html
+--------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register Page</h1>
+    <form action="/register" method="post">
+        Username:<input type="text" name="user" placeholder="username"><br><br>
+        Password:<input type="text" name="pwd" placeholder="password"><br><br>
+        Confirm password:<input type="text" name="cpwd" placeholder="confirm password"><br><br>
+        <input type="submit" value="submit">
+        
+    </form>
+</body>
+</html>
+
+
+mainpage.html
+--------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>savescodes</h1>
+
+</body>
+</html>
+
+
+
+
+login.html
+-----------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <form action="/login" method="get">
+        Username:<input type="text" name="user" placeholder="username"><br><br>
+        Password:<input type="text" name="pwd" placeholder="password"><br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
+
+
+index.css
+------------
+/* public/index.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#demo {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+#demo a {
+    text-decoration: none;
+    color: #5a67d8;
+    font-weight: 600;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border: 2px solid #5a67d8;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+#demo a:hover {
+    background-color: #5a67d8;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+register.css
+-------------
+/* public/register.css */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+h1 { color: #2d3748; }
+
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 320px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    box-sizing: border-box; /* Prevents input from overflowing */
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #38a169;
+}
+
+
+
+login.cs
+----------
+/* public/login.css */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #edf2f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 { color: #2d3748; margin-bottom: 20px; }
+
+form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #4299e1;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #3182ce;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
