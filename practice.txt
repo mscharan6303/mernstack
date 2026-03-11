@@ -6088,6 +6088,171 @@ index.html
 
 
 
+<--index.js-->
+let express=require('express')
+let app=express()
+
+app.use(express.static('public'))
+
+let mongoose=require('mongoose')
+
+mongoose.connect('mongodb://127.0.0.1:27017/',{dbName:'CT'}).then(()=>{
+    console.log('mongodb connected')
+}).catch((err)=>{
+    console.log('error message',err)
+})
+app.use(express.urlencoded({extended:true}))
+
+let eSchema=new mongoose.Schema({
+    user:String,
+    pwd:String,
+    cpwd:String
+},{versionKey:false})
+
+let Emp=mongoose.model('emp',eSchema,'emp')
+
+app.get('/',(req,res)=>{
+    res.sendFile(__dirname+'/index.html')
+})
+app.get('/register.html',(req,res)=>{
+    res.sendFile(__dirname+'/register.html')
+})
+app.post('/register',async(req,res)=>{
+    let u=req.body
+    let {user,pwd,cpwd}=u
+    if(pwd.length<8){
+        res.send('password length must be 8 characters..')
+    }
+    else if(!/[A-Z]/.test(pwd)){
+        res.send("at least one upper case letter...")
+    }
+    else if(!/[a-z]/.test(pwd)){
+        res.send("at least one lower case letter...")
+    }
+    else if(!/[0-9]/.test(pwd)){
+        res.send("at leat one number...")
+    }
+    else if(!/[.,!#$@^&*:;']/.test(pwd)){
+        res.send("at least oone special character...")
+    }
+    else{
+        if(pwd===cpwd){
+             await Emp.insertOne(u)
+            res.json({username:user,password:pwd,cpassword:cpwd})
+        }
+        else{
+            res.send("password and confirm password are not equal...")
+        }
+    }
+
+})
+app.listen(3000,'127.0.0.1',()=>{
+    console.log('server run on http://127.0.0.1:3000')
+})
+
+<--register.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register Page</h1>
+    <form action="/register" method="post">
+        Username:<input type="text" name="user" placeholder="username"><br><br>
+        Password:<input type="text" name="pwd" placeholder="password"><br><br>
+        Confirm password:<input type="text" name="cpwd" placeholder="confirm password"><br><br>
+        <input type="submit" value="submit">
+        
+    </form>
+</body>
+</html>
+
+<--index.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="demo">
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+    </div>
+
+</body>
+</html>
+
+<--login.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+</body>
+</html>
+
+<mainpage.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<--index.css-->
+*{
+    margin-top: 10px;
+}
+#demo{
+    padding:10px;
+}
+a{
+    text-decoration: none;
+    padding:10px;
+    background-color: whitesmoke;
+    color:black;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
